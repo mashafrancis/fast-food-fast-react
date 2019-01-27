@@ -6,14 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./components/App";
 import configureStore from "./redux/configureStore";
 import ErrorBoundary from "./components/ErrorBoundary";
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/index.scss";
 
 const store = configureStore();
-
-// Dispatch actions to load initial state.
-// store.dispatch(loadCourses());
-// store.dispatch(loadAuthors());
 
 render(
   <ErrorBoundary>

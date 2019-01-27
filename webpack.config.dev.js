@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Required by babel-preset-react-app
 process.env.NODE_ENV = "development";
@@ -34,6 +35,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/index.html",
       favicon: "src/favicon.ico"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "style.css"
     })
   ],
   module: {
@@ -45,8 +49,8 @@ module.exports = {
         use: ["babel-loader", "eslint-loader"]
       },
       {
-        test: /(\.css)$/,
-        use: ["style-loader", "css-loader"]
+        test: /(\.scss)$/,
+        "use": [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       }
     ]
   }
