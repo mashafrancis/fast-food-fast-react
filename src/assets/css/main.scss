@@ -1,3 +1,10 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~react-toastify/scss/main.scss';
+@import 'admin';
+@import 'profile';
+@import 'spinner';
+@import '~react-toastify/dist/ReactToastify.css';
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -214,7 +221,7 @@ a.btn:hover {
     align-items: center;
 
     margin: 0;
-    background: url("../img/10.jpg") no-repeat center center fixed;
+    background: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817053/fast-food-fast/10.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -251,7 +258,7 @@ a.btn:hover {
     align-items: center;
 
     margin: 0;
-    background: url("../img/salad.jpg") no-repeat center center fixed;
+    background: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817112/fast-food-fast/salad.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -382,7 +389,7 @@ input[type="search"] {
 .index-banner {
     width: 100%;
     height: 100vh;
-    background: url('../img/10.jpg') no-repeat center;
+    background: url('https://res.cloudinary.com/mashafrancis/image/upload/v1548817053/fast-food-fast/10.jpg') no-repeat center;
     background-size: cover;
     display: table;
 }
@@ -422,7 +429,7 @@ input[type="search"] {
     margin: 16px 16px 0;
     width: calc(100% - 32px);
     height: 100px;
-    background: url('../img/9.jpg') no-repeat center;
+    background: url('https://res.cloudinary.com/mashafrancis/image/upload/v1548817073/fast-food-fast/9.jpg') no-repeat center;
     background-size: cover;
     display: table;
 }
@@ -479,27 +486,27 @@ input[type="search"] {
 }
 
 #category-1 {
-    background-image: url("../img/burger1.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817070/fast-food-fast/burger.jpg");
 }
 
 #category-2 {
-    background-image: url("../img/pizza.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817102/fast-food-fast/pizza.jpg");
 }
 
 #category-3 {
-    background-image: url("../img/salad.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817112/fast-food-fast/salad.jpg");
 }
 
 #category-4 {
-    background-image: url("../img/fries.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817088/fast-food-fast/fries.jpg");
 }
 
 #category-5 {
-    background-image: url("../img/pasta1.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817102/fast-food-fast/pasta1.jpg");
 }
 
 #category-6 {
-    background-image: url("../img/drinks.jpg");
+    background-image: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817175/fast-food-fast/drinks-2.jpg");
 }
 
 /* Footer */
@@ -616,10 +623,28 @@ footer {
 }
 
 .user-forms {
+    height: 100vh;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 20px 50px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+
     margin: 0;
-    background: url("../img/drinks.jpg") no-repeat center center fixed;
+    background: url("https://res.cloudinary.com/mashafrancis/image/upload/v1548817175/fast-food-fast/drinks.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
+    color: #0a0a0b;
+    overflow: hidden;
 }
 
 .wrapper-2 {
@@ -879,7 +904,7 @@ img.avatar {
     .index-links div {
         margin: 20px 10px 0;
         height: 230px;
-        background: url('../img/10.jpg') no-repeat center;
+        background: url('https://res.cloudinary.com/mashafrancis/image/upload/v1548817053/fast-food-fast/10.jpg') no-repeat center;
         background-size: cover;
         display: table;
         float: left;
