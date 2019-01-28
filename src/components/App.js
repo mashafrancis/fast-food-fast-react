@@ -1,16 +1,16 @@
 import React, {Suspense} from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import "bootstrap";
 import { ToastContainer } from "react-toastify";
 import Spinner from './common/spinner';
-import PageNotFound from './PageNotFound';
+import Routes from '../routes/Routes';
 
 
 const App = () => (
   <div className="container-fluid">
     <Suspense fallback={<Spinner />}>
       <Switch>
-        <Route render={PageNotFound} />
+        <Routes />
       </Switch>
     </Suspense>
     <ToastContainer autoClose={3000} hideProgressBar />
