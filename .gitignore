@@ -66,5 +66,12 @@ typings/
 
 package-lock.json
 
+# Webstorm metadata
+.idea
+
+# Mac files
 .DS_Store
-*/.DS_Store
+
+# json-server db
+db.json
+
