@@ -1,54 +1,34 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpackBundleAnalyzer = require("webpack-bundle-analyzer");
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpackBundleAnalyzer = require('webpack-bundle-analyzer');
 
 // Required by babel-preset-react-app
-process.env.NODE_ENV = "production";
+process.env.NODE_ENV = 'production';
 
 module.exports = {
-  mode: "production",
-  target: "web",
-  devtool: "source-map",
-  entry: "./src/index", // Can omit, since default.
+  mode: 'production',
+  target: 'web',
+  devtool: 'source-map',
+  entry: './src/index', // Can omit, since default.
   output: {
-    path: path.resolve(__dirname, "build"), // Note: Physical files are only output by the production build task `npm run build`.
-    publicPath: "/",
-    filename: "bundle.js"
-  },
-  optimization: {
-    namedModules: false,
-    namedChunks: false,
-    nodeEnv: 'production',
-    flagIncludedChunks: true,
-    occurrenceOrder: true,
-    sideEffects: true,
-    usedExports: true,
-    concatenateModules: true,
-    splitChunks: {
-      hidePathInfo: true,
-      minSize: 30000,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-    },
-    noEmitOnErrors: true,
-    checkWasmTypes: true,
-    minimize: true,
+    path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV), // This global makes sure React is built in prod mode.
-      "process.env.API_URL": JSON.stringify("http://localhost:3001") // Would set to prod API URL in real app
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV), // This global makes sure React is built in prod mode.
+      'process.env.API_URL': JSON.stringify('http://localhost:3001'), // Would set to prod API URL in real app
     }),
-    new webpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: "static" }), // Display bundle stats
+    new webpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: 'static' }), // Display bundle stats
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
+      filename: '[name].[contenthash].css',
     }),
-    // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
     new HtmlWebpackPlugin({
-      template: "src/index.html",
-      favicon: "src/favicon.ico",
+      template: 'src/index.html',
+      favicon: 'src/favicon.ico',
       minify: {
         // see https://github.com/kangax/html-minifier#options-quick-reference
         removeComments: true,
@@ -60,9 +40,9 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
-    })
+        minifyURLs: true,
+      },
+    }),
   ],
   module: {
     rules: [
@@ -70,11 +50,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         // Processed bottom up, so eslint-loader should be last.
-        use: ["babel-loader", "eslint-loader"]
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        loader: 'style-loader',
       },
       {
         test: /\.css$/,
@@ -86,32 +66,33 @@ module.exports = {
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        use: "url-loader?limit=10000&mimetype=application/font-woff"
+        use: 'url-loader?limit=10000&mimetype=application/font-woff',
       }, {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        use: "url-loader?limit=10000&mimetype=application/font-woff"
+        use: 'url-loader?limit=10000&mimetype=application/font-woff',
       }, {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        use: "url-loader?limit=10000&mimetype=application/octet-stream"
+        use: 'url-loader?limit=10000&mimetype=application/octet-stream',
       }, {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        use: "file-loader"
+        use: 'file-loader',
       }, {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: "url-loader?limit=10000&mimetype=image/svg+xml"
+        use: 'url-loader?limit=10000&mimetype=image/svg+xml',
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            "loader": 'file-loader',
-            "options": {},
+            'loader': 'file-loader',
+            'options': {},
           },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
   resolve: {
-    modules: ['node_modules']
-  }
+    modules: ['node_modules'],
+  },
 };
