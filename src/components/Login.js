@@ -6,7 +6,7 @@ const image = "https://res.cloudinary.com/mashafrancis/image/upload/v1548817055/
 
 const Login = () => {
   return (
-    <div className="user-forms">
+    <div classNa-e="user-forms">
       <div className="container-2">
         <div className="wrapper-2">
           <form>
