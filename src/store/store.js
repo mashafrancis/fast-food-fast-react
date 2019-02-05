@@ -1,0 +1,20 @@
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import rootReducer from '../redux/reducers';
+
+const initialState = {};
+
+const configureStore = () => {
+  const middleware = process.env.NODE_ENV === 'development'
+    ? composeWithDevTools(applyMiddleware(thunk))
+    : applyMiddleware(thunk, reduxImmutableStateInvariant());
+
+  return createStore(
+    rootReducer,
+    initialState,
+    middleware
+  );
+};
+export default configureStore;

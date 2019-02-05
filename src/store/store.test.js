@@ -1,5 +1,5 @@
 import expect from 'expect';
-import configureStore from './confugureStore.dev';
+import configureStore from './store';
 
 
 describe("Test store creation", () => {
