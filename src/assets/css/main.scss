@@ -96,13 +96,12 @@ textarea {
    Author's custom styles
    ========================================================================== */
 @font-face {
-    font-family: Product-Sans-Regular;
-    src: url("../fonts/product-sans-regular.ttf");
+    font-family: 'Catamaran', sans-serif;
 }
 
 * {
     text-decoration: none;
-    font-family: product-sans-regular, serif;
+    font-family: 'Catamaran', sans-serif;
     box-sizing: border-box;
 }
 
@@ -577,7 +576,7 @@ footer {
     border: none;
     font-size: 14px;
     color: #56585b;
-    font-family: Product-Sans-Regular, sans-serif;
+    font-family: 'Catamaran', sans-serif;
 }
 
 .flex-outer li button {

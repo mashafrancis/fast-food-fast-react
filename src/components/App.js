@@ -1,10 +1,8 @@
+import '@babel/polyfill';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import Login from './Login';
-import Signup from './Signup';
-import PageNotFound from './PageNotFound';
 import Navigation from './common/Navigation';
+import routes from '../routes';
 
 
 const App = () => (
@@ -12,12 +10,10 @@ const App = () => (
     <Navigation/>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Switch>
-          <Route exact path={Login}/>
-          <Route exact path={Signup}/>
-          <Route component={PageNotFound}/>
-        </Switch>
+        {routes.map(route => (
+          <Route exact={route.exact} path={route.path}
+                 component={route.component} key={route.path}/>
+        ))}
       </Switch>
     </Router>
   </div>

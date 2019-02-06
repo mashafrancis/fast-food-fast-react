@@ -1,11 +1,10 @@
 @font-face {
-    font-family: Product-Sans-Regular;
-    src: url("../fonts/product-sans-regular.ttf");
+    font-family: 'Catamaran', sans-serif;
 }
 
 * {
     text-decoration: none;
-    font-family: product-sans-regular, serif;
+    font-family: 'Catamaran', sans-serif;
     font-weight: 200;
     box-sizing: border-box;
 }
@@ -13,7 +12,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Product-Sans-Regular', sans-serif;
+    font-family: 'Catamaran', sans-serif;
     background-color: rgba(243, 243, 243, 0.88);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
