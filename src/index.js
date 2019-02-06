@@ -1,21 +1,18 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { render } from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import App from "./App";
-import configureStore from "./redux/configureStore";
-import ErrorBoundary from "./components/ErrorBoundary";
+import App from './components/App';
+import configureStore from './store/store';
+import './assets/css/main.scss';
+import './assets/images/favicon.ico';
 
 const store = configureStore();
 
-render(
-  <ErrorBoundary>
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>
-  </ErrorBoundary>,
-  document.getElementById("root")
+
+export default ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app') || document.createElement('div')
 );
