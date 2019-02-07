@@ -75,5 +75,3 @@ package-lock.json
 # json-server db
 db.json
 
-dist/
-
